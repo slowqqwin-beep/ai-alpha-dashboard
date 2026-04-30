@@ -5,10 +5,10 @@ import {
   Cpu, Database, Snowflake, CircuitBoard, Network, HardDrive,
   Building2, BatteryCharging
 } from "lucide-react";
-
+ 
 export default function IntegratedDashboard() {
   const [activeTab, setActiveTab] = useState("picks"); // picks | s2
-
+ 
   return (
     <div className="min-h-screen bg-[#05070d] text-stone-50 antialiased relative overflow-hidden font-body">
       <style>{`
@@ -29,12 +29,12 @@ export default function IntegratedDashboard() {
         .pulse-ring { animation: pulseRing 2s ease-in-out infinite; }
         @keyframes pulseRing { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }
       `}</style>
-
+ 
       <div className="grain absolute inset-0" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-400/60 to-transparent" />
-
+ 
       <div className="relative max-w-[1400px] mx-auto px-8 py-8">
-
+ 
         {/* ─────────── 顶部 ─────────── */}
         <header className="flex items-center justify-between mb-8 pb-6 border-b border-stone-700">
           <div className="flex items-center gap-3">
@@ -56,7 +56,7 @@ export default function IntegratedDashboard() {
             <div className="font-mono text-stone-300">2026·04·29 · 21:14 EST</div>
           </div>
         </header>
-
+ 
         {/* ─────────── 上下文事件提示 ─────────── */}
         <div className="mb-8 border border-amber-400/40 bg-amber-500/5 p-4 flex items-start gap-3">
           <Zap className="w-5 h-5 text-amber-300 flex-shrink-0 mt-0.5" />
@@ -71,7 +71,7 @@ export default function IntegratedDashboard() {
             </div>
           </div>
         </div>
-
+ 
         {/* ─────────── Tab 切换 ─────────── */}
         <div className="flex items-center gap-2 mb-6 border-b border-stone-800">
           <TabButton
@@ -89,10 +89,10 @@ export default function IntegratedDashboard() {
             sub="应用层 · 1→10 阶段判定"
           />
         </div>
-
+ 
         {/* ─────────── 内容 ─────────── */}
         {activeTab === "picks" ? <PicksShovelsView /> : <S2TrackerView />}
-
+ 
         <footer className="pt-6 mt-10 border-t border-stone-700 flex items-center justify-between text-[11px] text-stone-300">
           <div className="font-mono">DATA : 公司财报披露 · 卖方研报 · 不构成投资建议</div>
           <div className="font-mono">STAGE : capex 上修传导窗口期</div>
@@ -101,17 +101,17 @@ export default function IntegratedDashboard() {
     </div>
   );
 }
-
+ 
 /* ============================================================
    Picks & Shovels 视图 — 新模块
    ============================================================ */
-
+ 
 function PicksShovelsView() {
   const [marketFilter, setMarketFilter] = useState("ALL");
   const [categoryFilter, setCategoryFilter] = useState("ALL");
   const [stageFilter, setStageFilter] = useState("ALL");
   const [expanded, setExpanded] = useState(null);
-
+ 
   // ============ Picks & Shovels 数据 ============
   const stocks = [
     // ===== A股 =====
@@ -160,6 +160,32 @@ function PicksShovelsView() {
       narrative: "高功率柴发, AI 数据中心备用电源, 海外厂商产能扩张有限",
       catalyst: "AIDC 备电需求, 涨价预期",
       risk: "已大幅炒作 (4日 +30%)" },
+    // ----- 新增: PCB/CCL/ABF 链 + DDR4 涨价链 -----
+    { ticker: "生益科技", code: "600183.SH", market: "A", category: "PCB/CCL", sub: "高速覆铜板",
+      directness: 3, exposure: 2, underpriced: 2, visibility: 2, ytdReturn: 18,
+      narrative: "国内高速 CCL 龙头, AI 服务器 PCB 价值量提升直接受益",
+      catalyst: "M8/M9 等高端 CCL 出货占比提升, 毛利率改善",
+      risk: "CCL 仍受 PCB 整体景气度影响" },
+    { ticker: "深南电路", code: "002916.SZ", market: "A", category: "PCB/CCL", sub: "ABF 载板/AI PCB",
+      directness: 3, exposure: 3, underpriced: 1, visibility: 2, ytdReturn: 28,
+      narrative: "国内 ABF 载板第一梯队, AI 芯片 (GPU/ASIC) 价值量翻倍直接受益",
+      catalyst: "B200 等下一代 AI 芯片对 ABF 层数/面积要求大幅提升",
+      risk: "ABF 国产化客户验证仍在推进" },
+    { ticker: "中航光电", code: "002179.SZ", market: "A", category: "冷却", sub: "液冷接头/连接器",
+      directness: 3, exposure: 2, underpriced: 2, visibility: 2, ytdReturn: 12,
+      narrative: "液冷接头 + 高速连接器双业务, AI 服务器双重受益",
+      catalyst: "液冷渗透率提升 + 国产 AI 服务器份额扩大",
+      risk: "军工业务波动仍是主要业绩变量" },
+    { ticker: "沪电股份", code: "002463.SZ", market: "A", category: "PCB/CCL", sub: "AI 服务器 PCB",
+      directness: 3, exposure: 3, underpriced: 0, visibility: 3, ytdReturn: 55,
+      narrative: "AI 服务器 PCB 主供应商, 北美超大规模云厂客户群完整",
+      catalyst: "1.6T 时代 PCB 价值量再次跃升",
+      risk: "估值已透支, 适合回调入场" },
+    { ticker: "兆易创新", code: "603986.SH", market: "A", category: "内存存储", sub: "NOR Flash + DDR4",
+      directness: 2, exposure: 3, underpriced: 2, visibility: 1, ytdReturn: 8,
+      narrative: "DDR4 利基存储龙头, 三大原厂产能切 HBM 导致 DDR4 供给收缩涨价",
+      catalyst: "DDR4 价格 Q2-Q3 持续上涨 + NOR Flash 高景气延续",
+      risk: "DDR4 终究是过渡产品, 故事生命周期 1-2 年" },
     // ===== 美股 =====
     { ticker: "VRT", code: "VRT", market: "US", category: "电力管理", sub: "数据中心电源/冷却整机",
       directness: 3, exposure: 3, underpriced: 1, visibility: 3, ytdReturn: 22,
@@ -212,7 +238,7 @@ function PicksShovelsView() {
       catalyst: "GPU 密度上升 → 液冷必然替代风冷",
       risk: "业务转型未完成" },
   ];
-
+ 
   // 计算总分和阶段
   const evaluated = stocks.map(s => {
     const score = s.directness + s.exposure + s.underpriced + s.visibility;
@@ -223,7 +249,7 @@ function PicksShovelsView() {
     else { stage = "STORY"; stageLabel = "STORY"; }
     return { ...s, score, stage, stageLabel };
   }).sort((a, b) => b.score - a.score);
-
+ 
   // 过滤
   const filtered = evaluated.filter(s => {
     if (marketFilter !== "ALL" && s.market !== marketFilter) return false;
@@ -231,16 +257,16 @@ function PicksShovelsView() {
     if (stageFilter !== "ALL" && s.stage !== stageFilter) return false;
     return true;
   });
-
+ 
   const stats = {
     PRIME: evaluated.filter(s => s.stage === "PRIME").length,
     STRONG: evaluated.filter(s => s.stage === "STRONG").length,
     INDIRECT: evaluated.filter(s => s.stage === "INDIRECT").length,
     STORY: evaluated.filter(s => s.stage === "STORY").length,
   };
-
+ 
   const categories = [...new Set(stocks.map(s => s.category))];
-
+ 
   return (
     <div>
       {/* 阶段分布 */}
@@ -260,7 +286,7 @@ function PicksShovelsView() {
             color="rose" desc="0-3分 · 故事股, 暴露度低" />
         </div>
       </section>
-
+ 
       {/* 过滤器 */}
       <section className="mb-6 space-y-2">
         <div className="flex items-center gap-2 flex-wrap">
@@ -286,7 +312,7 @@ function PicksShovelsView() {
           ))}
         </div>
       </section>
-
+ 
       {/* 排行榜表格视图 */}
       <section className="mb-8">
         <div className="border border-stone-700 bg-stone-900/40">
@@ -314,7 +340,7 @@ function PicksShovelsView() {
           )}
         </div>
       </section>
-
+ 
       {/* PRIME 标的卡片精选 */}
       {stageFilter === "ALL" && marketFilter === "ALL" && (
         <section className="mb-8">
@@ -329,7 +355,7 @@ function PicksShovelsView() {
           </div>
         </section>
       )}
-
+ 
       {/* 算法说明 */}
       <section className="mb-6">
         <div className="border border-stone-700 bg-stone-900/40 p-5">
@@ -352,11 +378,11 @@ function PicksShovelsView() {
     </div>
   );
 }
-
+ 
 /* ============================================================
    S2 Tracker 视图 (简化版)
    ============================================================ */
-
+ 
 function S2TrackerView() {
   const companies = [
     { ticker: "NOW", name: "ServiceNow", category: "通用Copilot", aiProduct: "Now Assist",
@@ -392,7 +418,7 @@ function S2TrackerView() {
       narrative: "向量数据库故事性强但变现节奏慢, 毛利率下滑",
       metrics: { aiArrGrowth: 0, nrr: 118, gmDeltaYoY: -2.1, deploy: "pilot" } },
   ];
-
+ 
   const stats = {
     ENTERING_1_TO_10: companies.filter(c => c.stage === "ENTERING_1_TO_10").length,
     SCALING: companies.filter(c => c.stage === "SCALING").length,
@@ -400,7 +426,7 @@ function S2TrackerView() {
     FADING: companies.filter(c => c.stage === "FADING").length,
     MATURE: companies.filter(c => c.stage === "MATURE").length,
   };
-
+ 
   return (
     <div>
       <section className="mb-6">
@@ -412,7 +438,7 @@ function S2TrackerView() {
           <StageStatCard label="FADING" chinese="警示" count={stats.FADING} color="rose" desc="毛利率红牌" />
         </div>
       </section>
-
+ 
       <section>
         <div className="grid grid-cols-2 gap-3">
           {companies.sort((a, b) => b.score - a.score).map(c => (
@@ -423,9 +449,9 @@ function S2TrackerView() {
     </div>
   );
 }
-
+ 
 /* ─────────── 子组件 ─────────── */
-
+ 
 function TabButton({ active, onClick, icon: Icon, label, sub }) {
   return (
     <button
@@ -444,7 +470,7 @@ function TabButton({ active, onClick, icon: Icon, label, sub }) {
     </button>
   );
 }
-
+ 
 function StageStatCard({ label, chinese, count, color, desc, highlight }) {
   const colorMap = {
     stone:   "border-stone-600 text-stone-200",
@@ -461,7 +487,7 @@ function StageStatCard({ label, chinese, count, color, desc, highlight }) {
     </div>
   );
 }
-
+ 
 function FilterChip({ active, onClick, children }) {
   return (
     <button
@@ -476,7 +502,7 @@ function FilterChip({ active, onClick, children }) {
     </button>
   );
 }
-
+ 
 function RankRow({ stock, rank, onToggle, expanded }) {
   const s = stock;
   const stageColor = {
@@ -485,11 +511,11 @@ function RankRow({ stock, rank, onToggle, expanded }) {
     INDIRECT: "text-stone-300 bg-stone-700/40 border-stone-500",
     STORY:    "text-rose-300 bg-rose-500/10 border-rose-400/40",
   }[s.stage];
-
+ 
   const ytdColor = s.ytdReturn > 30 ? "text-rose-300" :
                    s.ytdReturn > 10 ? "text-amber-200" :
                    s.ytdReturn >= 0 ? "text-emerald-300" : "text-emerald-400";
-
+ 
   return (
     <>
       <div
@@ -550,7 +576,7 @@ function RankRow({ stock, rank, onToggle, expanded }) {
     </>
   );
 }
-
+ 
 function ScoreBreakdownInline({ directness, exposure, underpriced, visibility }) {
   const items = [
     { label: "直接", value: directness, max: 3 },
@@ -577,7 +603,7 @@ function ScoreBreakdownInline({ directness, exposure, underpriced, visibility })
     </div>
   );
 }
-
+ 
 function PrimeCard({ stock }) {
   const s = stock;
   return (
@@ -606,7 +632,7 @@ function PrimeCard({ stock }) {
     </div>
   );
 }
-
+ 
 function MethodItem({ title, weight, desc }) {
   return (
     <div>
@@ -618,7 +644,7 @@ function MethodItem({ title, weight, desc }) {
     </div>
   );
 }
-
+ 
 function S2Card({ company }) {
   const c = company;
   const stageStyle = {
@@ -628,7 +654,7 @@ function S2Card({ company }) {
     MATURE: "border-stone-500 bg-stone-700/30",
     FADING: "border-rose-400/60 bg-rose-500/10",
   }[c.stage];
-
+ 
   return (
     <div className={`border ${stageStyle} p-4 hover-lift`}>
       <div className="flex items-start justify-between mb-2">
@@ -652,7 +678,7 @@ function S2Card({ company }) {
     </div>
   );
 }
-
+ 
 function SmallMetric({ label, value, warn, good }) {
   return (
     <div className="border border-stone-700 bg-stone-900/60 px-1 py-1.5">
