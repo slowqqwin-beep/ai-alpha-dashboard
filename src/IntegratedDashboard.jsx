@@ -5,10 +5,10 @@ import {
   Cpu, Database, Snowflake, CircuitBoard, Network, HardDrive,
   Building2, BatteryCharging
 } from "lucide-react";
- 
+
 export default function IntegratedDashboard() {
   const [activeTab, setActiveTab] = useState("picks"); // picks | s2
- 
+
   return (
     <div className="min-h-screen bg-[#05070d] text-stone-50 antialiased relative overflow-hidden font-body">
       <style>{`
@@ -29,12 +29,12 @@ export default function IntegratedDashboard() {
         .pulse-ring { animation: pulseRing 2s ease-in-out infinite; }
         @keyframes pulseRing { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }
       `}</style>
- 
+
       <div className="grain absolute inset-0" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-400/60 to-transparent" />
- 
+
       <div className="relative max-w-[1400px] mx-auto px-8 py-8">
- 
+
         {/* ─────────── 顶部 ─────────── */}
         <header className="flex items-center justify-between mb-8 pb-6 border-b border-stone-700">
           <div className="flex items-center gap-3">
@@ -53,25 +53,23 @@ export default function IntegratedDashboard() {
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 pulse-ring" />
               <span className="font-mono text-emerald-300 tracking-widest font-semibold">LIVE</span>
             </div>
-            <div className="font-mono text-stone-300">2026·04·29 · 21:14 EST</div>
+            <div className="font-mono text-stone-300">2026·05·12 · 更新</div>
           </div>
         </header>
- 
+
         {/* ─────────── 上下文事件提示 ─────────── */}
         <div className="mb-8 border border-amber-400/40 bg-amber-500/5 p-4 flex items-start gap-3">
           <Zap className="w-5 h-5 text-amber-300 flex-shrink-0 mt-0.5" />
           <div className="flex-1">
             <div className="font-display text-base text-amber-100 mb-1">
-              事件触发 · MSFT/META/GOOG/AMZN Q1 2026 财报
+              最新事件 · 三重共振 · 应用层验证 + 算力链兑现 + GPU 万亿指引
             </div>
             <div className="text-sm text-stone-200 leading-relaxed">
-              四大 hyperscaler 2026 capex 合计 <span className="font-mono text-amber-200 font-bold">$725B</span>
-              （vs 预期 $670B）· MSFT 单家 $190B（+61% YoY，含 $25B 内存涨价）
-              · Azure RPO <span className="font-mono text-amber-200 font-bold">+99% YoY</span> · Copilot 付费席位 <span className="font-mono text-amber-200 font-bold">20M (+33% QoQ)</span>
+              <span className="font-mono text-amber-200 font-bold">PLTR Q1 +85%</span>（史上最快, Rule of 40 = 145%）· <span className="font-mono text-amber-200 font-bold">中际旭创 Q1 +192%/+262%</span>（预付款 +1009% 锁料）· <span className="font-mono text-amber-200 font-bold">NVDA</span> 给出 <span className="font-mono text-amber-200 font-bold">Blackwell+Rubin 三年 $1T</span> 收入指引 · MSFT/META/GOOG/AMZN 2026 capex 上修至 <span className="font-mono text-amber-200 font-bold">$725B</span>
             </div>
           </div>
         </div>
- 
+
         {/* ─────────── Tab 切换 ─────────── */}
         <div className="flex items-center gap-2 mb-6 border-b border-stone-800">
           <TabButton
@@ -89,10 +87,10 @@ export default function IntegratedDashboard() {
             sub="应用层 · 1→10 阶段判定"
           />
         </div>
- 
+
         {/* ─────────── 内容 ─────────── */}
         {activeTab === "picks" ? <PicksShovelsView /> : <S2TrackerView />}
- 
+
         <footer className="pt-6 mt-10 border-t border-stone-700 flex items-center justify-between text-[11px] text-stone-300">
           <div className="font-mono">DATA : 公司财报披露 · 卖方研报 · 不构成投资建议</div>
           <div className="font-mono">STAGE : capex 上修传导窗口期</div>
@@ -101,20 +99,47 @@ export default function IntegratedDashboard() {
     </div>
   );
 }
- 
+
 /* ============================================================
    Picks & Shovels 视图 — 新模块
    ============================================================ */
- 
+
 function PicksShovelsView() {
   const [marketFilter, setMarketFilter] = useState("ALL");
   const [categoryFilter, setCategoryFilter] = useState("ALL");
   const [stageFilter, setStageFilter] = useState("ALL");
   const [expanded, setExpanded] = useState(null);
- 
+
   // ============ Picks & Shovels 数据 ============
   const stocks = [
     // ===== A股 =====
+    // ----- 新增 (2026-05-12): 中际旭创 / 大族数控 / Agentic 应用三件套 -----
+    { ticker: "中际旭创", code: "300308.SZ", market: "A", category: "光模块", sub: "800G/1.6T 光模块",
+      directness: 3, exposure: 3, underpriced: 0, visibility: 3, ytdReturn: 32,
+      narrative: "Q1 营收 +192% 净利 +262%, 单季利润超 2024 全年, 预付款 +1009% 锁料信号极强",
+      catalyst: "1.6T 全球市占 50-70%, 12.8T XPO 全球首发, 订单已排至 2027",
+      risk: "PE 90+ 估值已极端, 应收账款 +98% 存货 +24% 警惕以量补价" },
+    { ticker: "大族数控", code: "301200.SZ", market: "A", category: "PCB/CCL", sub: "PCB 钻孔/曝光设备",
+      directness: 2, exposure: 3, underpriced: 2, visibility: 2, ytdReturn: 18,
+      narrative: "二阶受益 - 所有 AI PCB 厂商扩产都要买它设备, 比 PCB 自身更纯粹",
+      catalyst: "沪电/深南/景旺等 AI PCB 厂商订单饱满 → 设备扩产需求",
+      risk: "设备订单确认有滞后, 业绩节奏比 PCB 厂商晚 1-2 个季度" },
+    { ticker: "金山办公", code: "688111.SH", market: "A", category: "Agentic应用", sub: "WPS AI / Copilot",
+      directness: 2, exposure: 2, underpriced: 2, visibility: 2, ytdReturn: 10,
+      narrative: "国内最接近消费级 Copilot, PLTR Q1 验证 Agentic 商业化后估值重估",
+      catalyst: "WPS AI 付费用户突破临界点, 政企订单加速",
+      risk: "AI 变现节奏不及预期, 国资委采购周期长" },
+    { ticker: "科大讯飞", code: "002230.SZ", market: "A", category: "Agentic应用", sub: "星火 AI Agent",
+      directness: 2, exposure: 2, underpriced: 2, visibility: 2, ytdReturn: 8,
+      narrative: "星火大模型 + Agent 商业化推进, 教育/医疗/汽车多场景落地",
+      catalyst: "星火 5.0 发布 + 智能体平台开放, 国资云合作深化",
+      risk: "ToG 业务回款慢, 国产算力依赖" },
+    { ticker: "拓尔思", code: "300229.SZ", market: "A", category: "Agentic应用", sub: "政企 AI 应用",
+      directness: 3, exposure: 3, underpriced: 1, visibility: 2, ytdReturn: 22,
+      narrative: "对标 PLTR Gotham, 政企数据智能 + AI Agent 双重逻辑",
+      catalyst: "PLTR 验证后 A 股 Agentic 估值重估窗口",
+      risk: "市值小 (流通市值 <100 亿) 波动大, 业绩兑现节奏不稳定" },
+    // ----- 既有 A 股 -----
     { ticker: "金盘科技", code: "688676.SH", market: "A", category: "电力配电", sub: "干式变压器/SST",
       directness: 3, exposure: 2, underpriced: 0, visibility: 3, ytdReturn: 35,
       narrative: "国内干变龙头, AIDC 收入 +337% 占比 20%, SST 拿到英伟达/微软/亚马逊订单",
@@ -238,7 +263,7 @@ function PicksShovelsView() {
       catalyst: "GPU 密度上升 → 液冷必然替代风冷",
       risk: "业务转型未完成" },
   ];
- 
+
   // 计算总分和阶段
   const evaluated = stocks.map(s => {
     const score = s.directness + s.exposure + s.underpriced + s.visibility;
@@ -249,7 +274,7 @@ function PicksShovelsView() {
     else { stage = "STORY"; stageLabel = "STORY"; }
     return { ...s, score, stage, stageLabel };
   }).sort((a, b) => b.score - a.score);
- 
+
   // 过滤
   const filtered = evaluated.filter(s => {
     if (marketFilter !== "ALL" && s.market !== marketFilter) return false;
@@ -257,16 +282,16 @@ function PicksShovelsView() {
     if (stageFilter !== "ALL" && s.stage !== stageFilter) return false;
     return true;
   });
- 
+
   const stats = {
     PRIME: evaluated.filter(s => s.stage === "PRIME").length,
     STRONG: evaluated.filter(s => s.stage === "STRONG").length,
     INDIRECT: evaluated.filter(s => s.stage === "INDIRECT").length,
     STORY: evaluated.filter(s => s.stage === "STORY").length,
   };
- 
+
   const categories = [...new Set(stocks.map(s => s.category))];
- 
+
   return (
     <div>
       {/* 阶段分布 */}
@@ -286,7 +311,7 @@ function PicksShovelsView() {
             color="rose" desc="0-3分 · 故事股, 暴露度低" />
         </div>
       </section>
- 
+
       {/* 过滤器 */}
       <section className="mb-6 space-y-2">
         <div className="flex items-center gap-2 flex-wrap">
@@ -312,7 +337,7 @@ function PicksShovelsView() {
           ))}
         </div>
       </section>
- 
+
       {/* 排行榜表格视图 */}
       <section className="mb-8">
         <div className="border border-stone-700 bg-stone-900/40">
@@ -340,7 +365,7 @@ function PicksShovelsView() {
           )}
         </div>
       </section>
- 
+
       {/* PRIME 标的卡片精选 */}
       {stageFilter === "ALL" && marketFilter === "ALL" && (
         <section className="mb-8">
@@ -355,7 +380,7 @@ function PicksShovelsView() {
           </div>
         </section>
       )}
- 
+
       {/* 算法说明 */}
       <section className="mb-6">
         <div className="border border-stone-700 bg-stone-900/40 p-5">
@@ -378,11 +403,11 @@ function PicksShovelsView() {
     </div>
   );
 }
- 
+
 /* ============================================================
    S2 Tracker 视图 (简化版)
    ============================================================ */
- 
+
 function S2TrackerView() {
   const companies = [
     { ticker: "NOW", name: "ServiceNow", category: "通用Copilot", aiProduct: "Now Assist",
@@ -390,17 +415,17 @@ function S2TrackerView() {
       narrative: "Now Assist 净新增 ACV 翻倍 · NRR 128%",
       metrics: { aiArrGrowth: 150, nrr: 128, gmDeltaYoY: 0.4, deploy: "company-wide" } },
     { ticker: "PLTR", name: "Palantir", category: "数据/分析", aiProduct: "AIP",
-      score: 8, stage: "SCALING", stageLabel: "SCALING 10→100",
-      narrative: "AIP 驱动 US Commercial 加速 75% YoY",
-      metrics: { aiArrGrowth: 75, nrr: 124, gmDeltaYoY: -0.3, deploy: "company-wide" } },
+      score: 10, stage: "MATURE", stageLabel: "MATURE ⭐",
+      narrative: "Q1 营收 +85% 史上最快, US 商业 +133%, Rule of 40 = 145%, 全年指引上调至 +71%",
+      metrics: { aiArrGrowth: 133, nrr: 130, gmDeltaYoY: 0.8, deploy: "company-wide" } },
     { ticker: "GTLB", name: "GitLab", category: "代码/开发", aiProduct: "Duo",
       score: 8, stage: "SCALING", stageLabel: "SCALING 10→100",
       narrative: "Duo Pro/Enterprise 渗透稳健, 毛利 89.6%",
       metrics: { aiArrGrowth: 60, nrr: 119, gmDeltaYoY: 0.2, deploy: "expanding" } },
     { ticker: "CRM", name: "Salesforce", category: "CRM/营销", aiProduct: "Agentforce",
-      score: 6, stage: "ENTERING_1_TO_10", stageLabel: "ENTERING 1→10 ⭐",
-      narrative: "Agentforce 增长强劲但占总营收<2%",
-      metrics: { aiArrGrowth: 120, nrr: 107, gmDeltaYoY: -0.8, deploy: "expanding" } },
+      score: 7, stage: "SCALING", stageLabel: "SCALING 10→100",
+      narrative: "Agentforce 加速渗透, PLTR 验证后 Agentic AI 整体重估窗口",
+      metrics: { aiArrGrowth: 120, nrr: 110, gmDeltaYoY: -0.4, deploy: "expanding" } },
     { ticker: "DDOG", name: "Datadog", category: "数据/分析", aiProduct: "Bits AI",
       score: 5, stage: "ENTERING_1_TO_10", stageLabel: "ENTERING 1→10 ⭐",
       narrative: "AI 原生客户营收占比约 12%",
@@ -418,7 +443,7 @@ function S2TrackerView() {
       narrative: "向量数据库故事性强但变现节奏慢, 毛利率下滑",
       metrics: { aiArrGrowth: 0, nrr: 118, gmDeltaYoY: -2.1, deploy: "pilot" } },
   ];
- 
+
   const stats = {
     ENTERING_1_TO_10: companies.filter(c => c.stage === "ENTERING_1_TO_10").length,
     SCALING: companies.filter(c => c.stage === "SCALING").length,
@@ -426,7 +451,7 @@ function S2TrackerView() {
     FADING: companies.filter(c => c.stage === "FADING").length,
     MATURE: companies.filter(c => c.stage === "MATURE").length,
   };
- 
+
   return (
     <div>
       <section className="mb-6">
@@ -438,7 +463,7 @@ function S2TrackerView() {
           <StageStatCard label="FADING" chinese="警示" count={stats.FADING} color="rose" desc="毛利率红牌" />
         </div>
       </section>
- 
+
       <section>
         <div className="grid grid-cols-2 gap-3">
           {companies.sort((a, b) => b.score - a.score).map(c => (
@@ -449,9 +474,9 @@ function S2TrackerView() {
     </div>
   );
 }
- 
+
 /* ─────────── 子组件 ─────────── */
- 
+
 function TabButton({ active, onClick, icon: Icon, label, sub }) {
   return (
     <button
@@ -470,7 +495,7 @@ function TabButton({ active, onClick, icon: Icon, label, sub }) {
     </button>
   );
 }
- 
+
 function StageStatCard({ label, chinese, count, color, desc, highlight }) {
   const colorMap = {
     stone:   "border-stone-600 text-stone-200",
@@ -487,7 +512,7 @@ function StageStatCard({ label, chinese, count, color, desc, highlight }) {
     </div>
   );
 }
- 
+
 function FilterChip({ active, onClick, children }) {
   return (
     <button
@@ -502,7 +527,7 @@ function FilterChip({ active, onClick, children }) {
     </button>
   );
 }
- 
+
 function RankRow({ stock, rank, onToggle, expanded }) {
   const s = stock;
   const stageColor = {
@@ -511,11 +536,11 @@ function RankRow({ stock, rank, onToggle, expanded }) {
     INDIRECT: "text-stone-300 bg-stone-700/40 border-stone-500",
     STORY:    "text-rose-300 bg-rose-500/10 border-rose-400/40",
   }[s.stage];
- 
+
   const ytdColor = s.ytdReturn > 30 ? "text-rose-300" :
                    s.ytdReturn > 10 ? "text-amber-200" :
                    s.ytdReturn >= 0 ? "text-emerald-300" : "text-emerald-400";
- 
+
   return (
     <>
       <div
@@ -576,7 +601,7 @@ function RankRow({ stock, rank, onToggle, expanded }) {
     </>
   );
 }
- 
+
 function ScoreBreakdownInline({ directness, exposure, underpriced, visibility }) {
   const items = [
     { label: "直接", value: directness, max: 3 },
@@ -603,7 +628,7 @@ function ScoreBreakdownInline({ directness, exposure, underpriced, visibility })
     </div>
   );
 }
- 
+
 function PrimeCard({ stock }) {
   const s = stock;
   return (
@@ -632,7 +657,7 @@ function PrimeCard({ stock }) {
     </div>
   );
 }
- 
+
 function MethodItem({ title, weight, desc }) {
   return (
     <div>
@@ -644,7 +669,7 @@ function MethodItem({ title, weight, desc }) {
     </div>
   );
 }
- 
+
 function S2Card({ company }) {
   const c = company;
   const stageStyle = {
@@ -654,7 +679,7 @@ function S2Card({ company }) {
     MATURE: "border-stone-500 bg-stone-700/30",
     FADING: "border-rose-400/60 bg-rose-500/10",
   }[c.stage];
- 
+
   return (
     <div className={`border ${stageStyle} p-4 hover-lift`}>
       <div className="flex items-start justify-between mb-2">
@@ -678,7 +703,7 @@ function S2Card({ company }) {
     </div>
   );
 }
- 
+
 function SmallMetric({ label, value, warn, good }) {
   return (
     <div className="border border-stone-700 bg-stone-900/60 px-1 py-1.5">
