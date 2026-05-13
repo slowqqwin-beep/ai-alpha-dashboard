@@ -2,11 +2,13 @@ name: Deploy to GitHub Pages
 
 # 何时触发
 on:
-  # 推送到 main 分支时自动部署
   push:
-    branches: [ main ]
-  # 也支持手动触发
+    branches: [main]
   workflow_dispatch:
+  workflow_run:                          # ← 新增这块
+    workflows: ["Update Stock Prices"]
+    types: [completed]
+    branches: [main]
 
 # Pages 部署需要的权限
 permissions:
