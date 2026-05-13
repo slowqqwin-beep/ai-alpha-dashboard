@@ -242,7 +242,7 @@ function PicksShovelsView() {
     { ticker: "沪电股份", code: "002463.SZ", market: "A", category: "PCB/CCL", sub: "AI 服务器 PCB",
       directness: 3, exposure: 3, visibility: 3,
       currentPrice: 111.02, priceRefDate: "2026-05-13", dataConfidence: "VERIFIED",
-      week52High: 112.88, week52Low: 28.54, yearStartPrice: "VERIFIED",
+      week52High: 112.88, week52Low: 28.54, yearStartPrice: 104.4,
       narrative: "AI 服务器 PCB 主供应商, 北美超大规模云厂客户群完整",
       catalyst: "1.6T 时代 PCB 价值量再次跃升",
       risk: "⚠ 估值已透支, 建议回调入场" },
