@@ -158,7 +158,7 @@ function PicksShovelsView() {
     { ticker: "雅克科技", code: "002409.SZ", market: "A", category: "HBM材料", sub: "前驱体",
       directness: 3, exposure: 3, visibility: 3,
       currentPrice: 101.05, priceRefDate: "2026-05-13", dataConfidence: "VERIFIED",
-      week52High: 102。29, week52Low: 50.83, yearStartPrice: 76,
+      week52High: 102.29, week52Low: 50.83, yearStartPrice: 76,
       lastEarningsFlag: "MISS_MILD", lastEarningsNote: "Q1 营收-6.85% 净利+2.47%",
       narrative: "HBM 前驱体国内独苗, 全球前三大 HBM 厂共同供应商",
       catalyst: "HBM4 已通过 SK 海力士独家认证, 与华为合作 2026Q1 量产",
