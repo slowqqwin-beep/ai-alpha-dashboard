@@ -122,4 +122,13 @@ function StockCard({ s }) {
           <span className="text-xl font-mono font-bold text-stone-50">{s.market === 'A' ? '¥' : '$'}{currentPrice?.toFixed(2)}</span>
         </div>
         <div className="mt-2 h-1 bg-stone-800 relative w-full">
-          <div className="absolute h-full bg-amber-400/50" style={{ width: `${Math.min(100, Math.max(0
+          <div className="absolute h-full bg-amber-400/50" style={{ width: `${Math.min(100, Math.max(0, rangePct))}%` }} />
+        </div>
+        <div className="flex justify-between text-[8px] text-stone-500 mt-1 font-mono"><span>52W L</span><span>52W H</span></div>
+      </div>
+
+      <div className="text-xs text-stone-300 leading-relaxed line-clamp-2 mb-2">{s.narrative}</div>
+      <div className="text-[10px] text-stone-500 border-t border-stone-800 pt-2 italic">Risk: {s.risk}</div>
+    </div>
+  );
+}
