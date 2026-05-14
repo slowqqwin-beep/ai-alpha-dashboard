@@ -1,0 +1,47 @@
+name: Update Stock Prices
+
+on:
+  schedule:
+    # 工作日每天 22:00 UTC 跑一次
+    # = 美西 15:00 (你的本地时间, PDT) / 美东 18:00 (美股收盘后 2h)
+    # = 北京 06:00 次日 (A股开盘前 3.5h, 收盘价已稳定)
+    # 这个时点能同时锁定当天 A股 + 美股收盘价
+    - cron: "0 22 * * 1-5"
+  workflow_dispatch:  # 允许手动触发
+
+permissions:
+  contents: write  # 需要写权限来 push prices.json
+
+concurrency:
+  group: update-prices
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install requests yfinance
+
+      - name: Fetch prices
+        run: python scripts/update_prices.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/prices.json
+          if git diff --cached --quiet; then
+            echo "无价格变化,跳过 commit"
+          else
+            git commit -m "chore: 自动更新价格 $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi
