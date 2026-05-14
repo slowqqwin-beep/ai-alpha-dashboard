@@ -230,5 +230,4 @@ function StageStatCard({ label, count, color, desc, highlight }) {
     </div>
   );
 }
-  );
-}
+
