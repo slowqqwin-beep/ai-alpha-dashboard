@@ -26,13 +26,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          cache: pip
+          # 注意：这里删掉了 cache: pip，因为它在找不存在的 requirements.txt
 
       - name: Install dependencies
         run: pip install requests yfinance
 
       - name: Fetch prices
-        run: python scripts/update_prices.py
+        # 这里必须和你红框里的名字一模一样
+        run: python scriptsupdate_prices.py/update_prices.py
 
       - name: Commit if changed
         run: |
