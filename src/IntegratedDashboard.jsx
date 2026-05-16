@@ -5,7 +5,7 @@ import {
 } from "lucide-react";
 
 /* ============================================================
-   AI Alpha Dashboard v2.4.2 (全量功能复原 + 行情标尺指针修复版)
+   AI Alpha Dashboard v2.4.3 (自动化合流数据流 + 智能公式判定版)
    ============================================================ */
 
 export default function IntegratedDashboard() {
@@ -64,7 +64,7 @@ export default function IntegratedDashboard() {
             <div>
               <div className="font-display text-2xl text-stone-50 leading-none">AI Alpha Suite</div>
               <div className="text-[11px] tracking-[0.25em] text-stone-300 mt-1.5 uppercase font-medium">
-                v2.4.2 · 完整数据流与复合思考看板
+                v2.4.3 · 完整数据流与复合思考看板
               </div>
             </div>
           </div>
@@ -116,7 +116,7 @@ export default function IntegratedDashboard() {
             icon={Cpu} label="S2 Tracker" sub="美股应用层 · 8 只标的" />
         </div>
 
-        {activeTab === "picks" ? <PicksShovelsView externalPrices={externalData.stocks} /> : <S2TrackerView />}
+        {activeTab === "picks" ? <PicksShovelsView externalPrices={externalData.stocks} updatedAt={externalData.updatedAt} /> : <S2TrackerView />}
 
         <footer className="pt-6 mt-10 border-t border-stone-700 flex items-center justify-between text-[11px] text-stone-300">
           <div className="font-mono">DATA : 公司财报 · 自动化同步 · 不构成投资建议</div>
@@ -131,7 +131,7 @@ export default function IntegratedDashboard() {
    Picks & Shovels 视图 - 核心动态合流区
    ============================================================ */
 
-function PicksShovelsView({ externalPrices }) {
+function PicksShovelsView({ externalPrices, updatedAt }) {
   const [marketFilter, setMarketFilter] = useState("ALL");
   const [stageFilter, setStageFilter] = useState("ALL");
   const [expanded, setExpanded] = useState(null);
@@ -295,7 +295,7 @@ function PicksShovelsView({ externalPrices }) {
       directness: 3, exposure: 3, visibility: 2,
       currentPrice: 19.32, priceRefDate: "2026-05-13", dataConfidence: "VERIFIED",
       week52High: 31, week52Low: 16.3, yearStartPrice: 18.09,
-      narrative: "对标 PLTR Gotham, 政企数据智能 + AI Agent 双重逻辑",
+      narrative: "对标 PLTR Gotham, 政企数据智能 + AI Agent双重逻辑",
       catalyst: "PLTR 验证后 A 股 Agentic 重估窗口",
       risk: "市值小波动大, 业绩节奏不稳定" },
 
@@ -382,20 +382,31 @@ function PicksShovelsView({ externalPrices }) {
   ];
 
   const stocks = useMemo(() => {
+    const runtimeDate = updatedAt ? updatedAt.split('T')[0] : "2026-05-16";
     return stocksRaw.map(s => {
       const cleanCode = s.code.split('.')[0];
       const dyn = externalPrices[cleanCode] || {};
       
       return {
         ...s,
-        currentPrice: dyn.price || s.currentPrice,
-        week52High: dyn.week52High || s.week52High,
-        week52Low: dyn.week52Low || s.week52Low,
-        priceRefDate: dyn.price ? "2026-05-14" : s.priceRefDate,
+        // 核心数值合流
+        currentPrice: dyn.price !== undefined ? dyn.price : s.currentPrice,
+        week52High: dyn.week52High !== undefined ? dyn.week52High : s.week52High,
+        week52Low: dyn.week52Low !== undefined ? dyn.week52Low : s.week52Low,
+        
+        // 全文本流无缝贯通覆盖：只要自动化 Bot 的 prices.json 抓到了新状态，自动覆盖同步
+        narrative: dyn.narrative || s.narrative,
+        catalyst: dyn.catalyst || s.catalyst,
+        risk: dyn.risk || s.risk,
+        lastEarningsFlag: dyn.lastEarningsFlag || s.lastEarningsFlag,
+        lastEarningsNote: dyn.lastEarningsNote || s.lastEarningsNote,
+        isFading: dyn.isFading !== undefined ? dyn.isFading : s.isFading,
+        
+        priceRefDate: dyn.price ? runtimeDate : s.priceRefDate,
         dataConfidence: dyn.price ? "VERIFIED" : s.dataConfidence
       };
     });
-  }, [externalPrices]);
+  }, [externalPrices, updatedAt]);
 
   const evaluated = stocks.map(s => {
     const score = s.directness + s.exposure + s.visibility;
@@ -453,7 +464,7 @@ function PicksShovelsView({ externalPrices }) {
       <section className="mb-6">
         <div className="grid grid-cols-4 gap-3">
           <StageStatCard label="CORE ⭐" chinese="产业链核心" count={stats.CORE}
-            color="emerald" desc="7-8 分 · 直接受益位置" highlight />
+            color="emerald" desc="7-9 分 · 直接受益位置" highlight />
           <StageStatCard label="STRONG" chinese="强相关" count={stats.STRONG}
             color="amber" desc="5-6 分 · 受益较直接" />
           <StageStatCard label="INDIRECT" chinese="间接受益" count={stats.INDIRECT}
@@ -503,8 +514,11 @@ function StockCard({ stock, expanded, onToggle }) {
     ? ((s.currentPrice - s.week52Low) / (s.week52High - s.week52Low) * 100)
     : 50;
   
-  // 阈值：若物理水位超过 85%，定义为技术高位
+  // 阈值公式判定：若刻度水位线超过 85%，定义为高危高位状态
   const isHighZone = rangePct > 85;
+
+  // 综合判定红框高危预警条件：叙事破灭、公式判定高位、或文本中带有明文警告符号
+  const showRiskInCard = s.isFading || isHighZone || (s.risk && s.risk.includes("⚠"));
 
   const cardStyle = {
     CORE: "border-emerald-400/60 bg-emerald-500/5",
@@ -545,7 +559,7 @@ function StockCard({ stock, expanded, onToggle }) {
         <div className="text-right">
           <div className="flex items-baseline gap-1 justify-end">
             <span className="font-display digit text-2xl text-stone-50">{s.score}</span>
-            <span className="text-stone-500 text-sm">/8</span>
+            <span className="text-stone-500 text-sm">/9</span>
           </div>
           <span className={`font-mono text-[10px] tracking-widest px-2 py-0.5 border font-bold ${badgeStyle}`}>
             {s.stageLabel}
@@ -556,7 +570,7 @@ function StockCard({ stock, expanded, onToggle }) {
       <div className="flex items-center gap-2 mb-3 pb-3 border-b border-stone-700/60">
         <ScoreBar label="直接" value={s.directness} max={3} />
         <ScoreBar label="暴露" value={s.exposure} max={3} />
-        <ScoreBar label="可见" value={s.visibility} max={2} />
+        <ScoreBar label="可见" value={s.visibility} max={3} />
       </div>
 
       {/* 52W 物理指针样式组件注入 */}
@@ -571,16 +585,23 @@ function StockCard({ stock, expanded, onToggle }) {
 
       <div className="text-[12px] text-stone-200 leading-relaxed mb-2">{s.narrative}</div>
 
-      {(s.isFading || (s.risk && s.risk.includes("⚠"))) && (
+      {/* 红框动态风险警示区：高水位自查逻辑绑定与数据流对齐 */}
+      {showRiskInCard && (
         <div className="mt-2 p-2 border border-rose-400/40 bg-rose-500/10 text-[11px] text-rose-200 leading-relaxed">
-          {s.risk}
+          {isHighZone && (
+            <span className="text-rose-400 font-bold block mb-1">
+              ⚠ 智能判定：52W刻度({rangePct.toFixed(0)}%)进入极高水位，追高安全边际较低，严防高位回撤。
+            </span>
+          )}
+          {s.risk && <span>{s.risk}</span>}
         </div>
       )}
 
       {expanded && (
         <div className="mt-3 pt-3 border-t border-stone-700/60 space-y-2 text-[11px]">
           <div><span className="font-mono text-emerald-300 font-bold">🎯 催化: </span><span className="text-stone-200">{s.catalyst}</span></div>
-          {!(s.risk && s.risk.includes("⚠")) && !s.isFading && (
+          {/* 若没有触发红框条件，普通风险叙事则隐藏在折叠面板内 */}
+          {!showRiskInCard && s.risk && (
             <div><span className="font-mono text-rose-300 font-bold">⚠ 风险: </span><span className="text-stone-200">{s.risk}</span></div>
           )}
         </div>
@@ -625,7 +646,6 @@ function PriceSnapshot({ stock, rangePct, isHighZone }) {
       </div>
       <div className="mb-1">
         <div className="flex items-center gap-2 text-[10px] text-stone-400">
-          {/* Milestone C 落地：全范围色域 + 精确物理刻度线垂直指针 */}
           <div className="flex-1 h-1.5 bg-stone-800 relative rounded-full overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 via-amber-500/20 to-rose-500/20" />
             <div 
