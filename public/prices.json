@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-15T22:53:30.385975+00:00",
+  "updatedAt": "2026-05-16T08:38:20.208447+00:00",
   "stocks": {
     "300308": {
       "name": "中际旭创",
@@ -241,21 +241,21 @@
       "name": "GTLB",
       "market": "US",
       "price": 23.66,
-      "week52High": 52.59,
+      "week52High": 52.38,
       "week52Low": 18.73
     },
     "CRM": {
       "name": "CRM",
       "market": "US",
       "price": 173.51,
-      "week52High": 292.17,
+      "week52High": 289.9,
       "week52Low": 163.52
     },
     "DDOG": {
       "name": "DDOG",
       "market": "US",
       "price": 207.98,
-      "week52High": 205.44,
+      "week52High": 211.28,
       "week52Low": 98.01
     },
     "SNOW": {
@@ -269,7 +269,7 @@
       "name": "CRWD",
       "market": "US",
       "price": 594.08,
-      "week52High": 583.78,
+      "week52High": 598.25,
       "week52Low": 342.72
     },
     "MDB": {
