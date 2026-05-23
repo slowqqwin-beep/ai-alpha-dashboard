@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-22T22:57:35.050837+00:00",
+  "updatedAt": "2026-05-23T08:12:28.787764+00:00",
   "stocks": {
     "300308": {
       "name": "中际旭创",
@@ -158,7 +158,7 @@
       "market": "US",
       "price": 327.46,
       "week52High": 379.93,
-      "week52Low": 101.0
+      "week52Low": 104.71
     },
     "ETN": {
       "name": "ETN",
@@ -179,27 +179,27 @@
       "market": "US",
       "price": 751.0,
       "week52High": 818.67,
-      "week52Low": 90.93
+      "week52Low": 92.22
     },
     "AVGO": {
       "name": "AVGO",
       "market": "US",
       "price": 414.14,
       "week52High": 442.36,
-      "week52Low": 226.18
+      "week52Low": 231.13
     },
     "MRVL": {
       "name": "MRVL",
       "market": "US",
       "price": 196.33,
-      "week52High": 194.58,
+      "week52High": 198.4,
       "week52Low": 58.61
     },
     "ALAB": {
       "name": "ALAB",
       "market": "US",
       "price": 306.88,
-      "week52High": 298.36,
+      "week52High": 315.81,
       "week52Low": 84.78
     },
     "ANET": {
@@ -213,8 +213,8 @@
       "name": "CRDO",
       "market": "US",
       "price": 218.41,
-      "week52High": 213.8,
-      "week52Low": 59.0
+      "week52High": 218.95,
+      "week52Low": 59.21
     },
     "MOD": {
       "name": "MOD",
@@ -248,14 +248,14 @@
       "name": "CRM",
       "market": "US",
       "price": 180.07,
-      "week52High": 280.74,
+      "week52High": 278.81,
       "week52Low": 163.52
     },
     "DDOG": {
       "name": "DDOG",
       "market": "US",
       "price": 222.32,
-      "week52High": 220.35,
+      "week52High": 224.77,
       "week52Low": 98.01
     },
     "SNOW": {
@@ -269,7 +269,7 @@
       "name": "CRWD",
       "market": "US",
       "price": 663.46,
-      "week52High": 659.55,
+      "week52High": 674.84,
       "week52Low": 342.72
     },
     "MDB": {
