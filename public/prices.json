@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18T23:44:20.618456+00:00",
+  "updatedAt": "2026-06-19T22:55:36.480829+00:00",
   "stocks": {
     "300308": {
       "name": "中际旭创",
@@ -178,7 +178,7 @@
       "name": "MU",
       "market": "US",
       "price": 1133.99,
-      "week52High": 1110.4,
+      "week52High": 1149.43,
       "week52Low": 103.38
     },
     "AVGO": {
@@ -192,14 +192,14 @@
       "name": "MRVL",
       "market": "US",
       "price": 310.58,
-      "week52High": 324.2,
+      "week52High": 329.88,
       "week52Low": 61.44
     },
     "ALAB": {
       "name": "ALAB",
       "market": "US",
       "price": 417.07,
-      "week52High": 398.13,
+      "week52High": 421.2,
       "week52Low": 84.78
     },
     "ANET": {
@@ -213,7 +213,7 @@
       "name": "CRDO",
       "market": "US",
       "price": 271.83,
-      "week52High": 270.21,
+      "week52High": 274.9,
       "week52Low": 81.72
     },
     "MOD": {
@@ -249,7 +249,7 @@
       "market": "US",
       "price": 151.78,
       "week52High": 276.8,
-      "week52Low": 154.23
+      "week52Low": 149.8
     },
     "DDOG": {
       "name": "DDOG",
