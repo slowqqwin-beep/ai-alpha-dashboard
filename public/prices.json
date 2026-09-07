@@ -1,164 +1,164 @@
 {
-  "updatedAt": "2026-09-04T23:43:09.050948+00:00",
+  "updatedAt": "2026-09-07T23:59:12.326130+00:00",
   "stocks": {
     "300308": {
       "name": "中际旭创",
       "market": "A",
-      "price": 814.0,
-      "prevClose": 813.0,
-      "week52High": 975.6,
-      "week52Low": 650.4
+      "price": 898.46,
+      "prevClose": 814.0,
+      "week52High": 976.8,
+      "week52Low": 651.2
     },
     "688676": {
       "name": "金盘科技",
       "market": "A",
-      "price": 68.5,
-      "prevClose": 67.46,
-      "week52High": 80.95,
-      "week52Low": 53.97
+      "price": 67.91,
+      "prevClose": 68.5,
+      "week52High": 82.2,
+      "week52Low": 54.8
     },
     "301200": {
       "name": "大族数控",
       "market": "A",
-      "price": 254.4,
-      "prevClose": 269.17,
-      "week52High": 323.0,
-      "week52Low": 215.34
+      "price": 267.9,
+      "prevClose": 254.4,
+      "week52High": 305.28,
+      "week52Low": 203.52
     },
     "002837": {
       "name": "英维克",
       "market": "A",
-      "price": 63.91,
-      "prevClose": 68.49,
-      "week52High": 75.34,
-      "week52Low": 61.64
+      "price": 64.47,
+      "prevClose": 63.91,
+      "week52High": 70.3,
+      "week52Low": 57.52
     },
     "002409": {
       "name": "雅克科技",
       "market": "A",
-      "price": 126.62,
-      "prevClose": 131.6,
-      "week52High": 144.76,
-      "week52Low": 118.44
+      "price": 131.0,
+      "prevClose": 126.62,
+      "week52High": 139.28,
+      "week52Low": 113.96
     },
     "688368": {
       "name": "晶丰明源",
       "market": "A",
-      "price": 146.61,
-      "prevClose": 154.52,
-      "week52High": 185.42,
-      "week52Low": 123.62
+      "price": 150.7,
+      "prevClose": 146.61,
+      "week52High": 175.93,
+      "week52Low": 117.29
     },
     "300229": {
       "name": "拓尔思",
       "market": "A",
-      "price": 13.79,
-      "prevClose": 13.44,
-      "week52High": 16.13,
-      "week52Low": 10.75
+      "price": 13.67,
+      "prevClose": 13.79,
+      "week52High": 16.55,
+      "week52Low": 11.03
     },
     "002463": {
       "name": "沪电股份",
       "market": "A",
-      "price": 111.5,
-      "prevClose": 116.42,
-      "week52High": 128.06,
-      "week52Low": 104.78
+      "price": 122.65,
+      "prevClose": 111.5,
+      "week52High": 122.65,
+      "week52Low": 100.35
     },
     "002916": {
       "name": "深南电路",
       "market": "A",
-      "price": 331.8,
-      "prevClose": 341.54,
-      "week52High": 375.69,
-      "week52Low": 307.39
+      "price": 364.98,
+      "prevClose": 331.8,
+      "week52High": 364.98,
+      "week52Low": 298.62
     },
     "600183": {
       "name": "生益科技",
       "market": "A",
-      "price": 137.5,
-      "prevClose": 143.19,
-      "week52High": 157.51,
-      "week52Low": 128.87
+      "price": 148.15,
+      "prevClose": 137.5,
+      "week52High": 151.25,
+      "week52Low": 123.75
     },
     "002179": {
       "name": "中航光电",
       "market": "A",
-      "price": 34.22,
-      "prevClose": 34.64,
-      "week52High": 38.1,
-      "week52Low": 31.18
+      "price": 34.15,
+      "prevClose": 34.22,
+      "week52High": 37.64,
+      "week52Low": 30.8
     },
     "605111": {
       "name": "新洁能",
       "market": "A",
-      "price": 53.96,
-      "prevClose": 56.01,
-      "week52High": 61.61,
-      "week52Low": 50.41
+      "price": 55.15,
+      "prevClose": 53.96,
+      "week52High": 59.36,
+      "week52Low": 48.56
     },
     "688720": {
       "name": "艾森股份",
       "market": "A",
-      "price": 57.55,
-      "prevClose": 60.21,
-      "week52High": 72.25,
-      "week52Low": 48.17
+      "price": 60.47,
+      "prevClose": 57.55,
+      "week52High": 69.06,
+      "week52Low": 46.04
     },
     "603986": {
       "name": "兆易创新",
       "market": "A",
-      "price": 371.88,
-      "prevClose": 383.2,
-      "week52High": 421.52,
-      "week52Low": 344.88
+      "price": 385.44,
+      "prevClose": 371.88,
+      "week52High": 409.07,
+      "week52Low": 334.69
     },
     "688111": {
       "name": "金山办公",
       "market": "A",
-      "price": 242.99,
-      "prevClose": 239.05,
-      "week52High": 286.86,
-      "week52Low": 191.24
+      "price": 239.53,
+      "prevClose": 242.99,
+      "week52High": 291.59,
+      "week52Low": 194.39
     },
     "002230": {
       "name": "科大讯飞",
       "market": "A",
-      "price": 39.5,
-      "prevClose": 39.2,
-      "week52High": 43.12,
-      "week52Low": 35.28
+      "price": 39.44,
+      "prevClose": 39.5,
+      "week52High": 43.45,
+      "week52Low": 35.55
     },
     "002335": {
       "name": "科华数据",
       "market": "A",
-      "price": 30.06,
-      "prevClose": 30.53,
-      "week52High": 33.58,
-      "week52Low": 27.48
+      "price": 30.91,
+      "prevClose": 30.06,
+      "week52High": 33.07,
+      "week52Low": 27.05
     },
     "300693": {
       "name": "盛弘股份",
       "market": "A",
-      "price": 40.13,
-      "prevClose": 41.1,
-      "week52High": 49.32,
-      "week52Low": 32.88
+      "price": 40.65,
+      "prevClose": 39.8,
+      "week52High": 47.76,
+      "week52Low": 31.84
     },
     "300153": {
       "name": "科泰电源",
       "market": "A",
-      "price": 22.82,
-      "prevClose": 22.22,
-      "week52High": 26.66,
-      "week52Low": 17.78
+      "price": 25.4,
+      "prevClose": 22.82,
+      "week52High": 27.38,
+      "week52Low": 18.26
     },
     "VRT": {
       "name": "VRT",
       "market": "US",
       "price": 280.53,
       "week52High": 379.93,
-      "week52Low": 118.7
+      "week52Low": 120.83
     },
     "ETN": {
       "name": "ETN",
@@ -179,12 +179,12 @@
       "market": "US",
       "price": 1016.59,
       "week52High": 1255.0,
-      "week52Low": 125.66
+      "week52Low": 128.4
     },
     "AVGO": {
       "name": "AVGO",
       "market": "US",
-      "price": 357.89,
+      "price": 357.9,
       "week52High": 495.0,
       "week52Low": 289.96
     },
@@ -193,7 +193,7 @@
       "market": "US",
       "price": 223.55,
       "week52High": 329.88,
-      "week52Low": 62.47
+      "week52Low": 63.07
     },
     "ALAB": {
       "name": "ALAB",
