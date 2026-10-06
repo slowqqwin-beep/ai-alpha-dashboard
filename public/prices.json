@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-03T00:55:23.542330+00:00",
+  "updatedAt": "2026-10-06T02:03:39.001130+00:00",
   "stocks": {
     "300308": {
       "name": "中际旭创",
@@ -156,126 +156,126 @@
     "VRT": {
       "name": "VRT",
       "market": "US",
-      "price": 252.18,
+      "price": 253.62,
       "week52High": 379.93,
       "week52Low": 147.82
     },
     "ETN": {
       "name": "ETN",
       "market": "US",
-      "price": 436.11,
+      "price": 432.6,
       "week52High": 478.0,
       "week52Low": 311.92
     },
     "GEV": {
       "name": "GEV",
       "market": "US",
-      "price": 988.7,
+      "price": 990.0,
       "week52High": 1195.94,
       "week52Low": 530.16
     },
     "MU": {
       "name": "MU",
       "market": "US",
-      "price": 1074.89,
+      "price": 1063.96,
       "week52High": 1255.0,
       "week52Low": 179.61
     },
     "AVGO": {
       "name": "AVGO",
       "market": "US",
-      "price": 355.14,
+      "price": 362.51,
       "week52High": 495.0,
       "week52Low": 289.96
     },
     "MRVL": {
       "name": "MRVL",
       "market": "US",
-      "price": 272.29,
+      "price": 271.25,
       "week52High": 329.88,
       "week52Low": 70.69
     },
     "ALAB": {
       "name": "ALAB",
       "market": "US",
-      "price": 350.33,
+      "price": 362.34,
       "week52High": 499.48,
       "week52Low": 97.89
     },
     "ANET": {
       "name": "ANET",
       "market": "US",
-      "price": 207.35,
+      "price": 206.9,
       "week52High": 214.89,
       "week52Low": 114.52
     },
     "CRDO": {
       "name": "CRDO",
       "market": "US",
-      "price": 218.64,
+      "price": 212.48,
       "week52High": 308.67,
       "week52Low": 86.49
     },
     "MOD": {
       "name": "MOD",
       "market": "US",
-      "price": 178.2,
+      "price": 182.91,
       "week52High": 323.25,
       "week52Low": 111.18
     },
     "PLTR": {
       "name": "PLTR",
       "market": "US",
-      "price": 188.75,
+      "price": 189.4,
       "week52High": 207.52,
       "week52Low": 106.37
     },
     "NOW": {
       "name": "NOW",
       "market": "US",
-      "price": 134.38,
+      "price": 136.08,
       "week52High": 192.97,
       "week52Low": 81.24
     },
     "GTLB": {
       "name": "GTLB",
       "market": "US",
-      "price": 49.78,
+      "price": 51.5,
       "week52High": 55.55,
       "week52Low": 18.73
     },
     "CRM": {
       "name": "CRM",
       "market": "US",
-      "price": 234.69,
+      "price": 229.79,
       "week52High": 269.11,
       "week52Low": 146.32
     },
     "DDOG": {
       "name": "DDOG",
       "market": "US",
-      "price": 277.22,
+      "price": 276.42,
       "week52High": 292.72,
       "week52Low": 98.01
     },
     "SNOW": {
       "name": "SNOW",
       "market": "US",
-      "price": 341.04,
+      "price": 338.99,
       "week52High": 384.56,
       "week52Low": 118.3
     },
     "CRWD": {
       "name": "CRWD",
       "market": "US",
-      "price": 270.04,
-      "week52High": 269.3,
+      "price": 272.67,
+      "week52High": 273.54,
       "week52Low": 85.68
     },
     "MDB": {
       "name": "MDB",
       "market": "US",
-      "price": 357.96,
+      "price": 359.23,
       "week52High": 473.1,
       "week52Low": 215.68
     }
