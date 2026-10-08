@@ -1,281 +1,281 @@
 {
-  "updatedAt": "2026-10-07T01:12:31.643740+00:00",
+  "updatedAt": "2026-10-08T01:33:13.370031+00:00",
   "stocks": {
     "300308": {
       "name": "中际旭创",
       "market": "A",
-      "price": 808.44,
-      "prevClose": 813.01,
-      "week52High": 975.61,
-      "week52Low": 650.41
+      "price": 797.0,
+      "prevClose": 808.44,
+      "week52High": 970.13,
+      "week52Low": 646.75
     },
     "688676": {
       "name": "金盘科技",
       "market": "A",
-      "price": 61.53,
-      "prevClose": 61.55,
-      "week52High": 73.86,
-      "week52Low": 49.24
+      "price": 62.2,
+      "prevClose": 61.31,
+      "week52High": 73.57,
+      "week52Low": 49.05
     },
     "301200": {
       "name": "大族数控",
       "market": "A",
-      "price": 224.79,
-      "prevClose": 230.9,
-      "week52High": 277.08,
-      "week52Low": 184.72
+      "price": 224.94,
+      "prevClose": 224.79,
+      "week52High": 269.75,
+      "week52Low": 179.83
     },
     "002837": {
       "name": "英维克",
       "market": "A",
-      "price": 53.95,
-      "prevClose": 55.58,
-      "week52High": 61.14,
-      "week52Low": 50.02
+      "price": 54.23,
+      "prevClose": 53.95,
+      "week52High": 59.35,
+      "week52Low": 48.56
     },
     "002409": {
       "name": "雅克科技",
       "market": "A",
-      "price": 121.0,
-      "prevClose": 124.55,
-      "week52High": 137.01,
-      "week52Low": 112.1
+      "price": 121.13,
+      "prevClose": 121.0,
+      "week52High": 133.1,
+      "week52Low": 108.9
     },
     "688368": {
       "name": "晶丰明源",
       "market": "A",
-      "price": 120.73,
-      "prevClose": 127.02,
-      "week52High": 152.42,
-      "week52Low": 101.62
+      "price": 119.69,
+      "prevClose": 120.73,
+      "week52High": 144.88,
+      "week52Low": 96.58
     },
     "300229": {
       "name": "拓尔思",
       "market": "A",
-      "price": 12.77,
-      "prevClose": 12.85,
-      "week52High": 15.42,
-      "week52Low": 10.28
+      "price": 12.57,
+      "prevClose": 12.77,
+      "week52High": 15.32,
+      "week52Low": 10.22
     },
     "002463": {
       "name": "沪电股份",
       "market": "A",
-      "price": 115.93,
-      "prevClose": 119.07,
-      "week52High": 130.98,
-      "week52Low": 107.16
+      "price": 119.0,
+      "prevClose": 115.93,
+      "week52High": 127.52,
+      "week52Low": 104.34
     },
     "002916": {
       "name": "深南电路",
       "market": "A",
-      "price": 373.01,
-      "prevClose": 375.6,
-      "week52High": 413.16,
-      "week52Low": 338.04
+      "price": 385.33,
+      "prevClose": 373.01,
+      "week52High": 410.31,
+      "week52Low": 335.71
     },
     "600183": {
       "name": "生益科技",
       "market": "A",
-      "price": 129.96,
-      "prevClose": 132.98,
-      "week52High": 146.28,
-      "week52Low": 119.68
+      "price": 134.0,
+      "prevClose": 129.96,
+      "week52High": 142.96,
+      "week52Low": 116.96
     },
     "002179": {
       "name": "中航光电",
       "market": "A",
-      "price": 33.33,
-      "prevClose": 32.9,
-      "week52High": 36.19,
-      "week52Low": 29.61
+      "price": 34.0,
+      "prevClose": 33.33,
+      "week52High": 36.66,
+      "week52Low": 30.0
     },
     "605111": {
       "name": "新洁能",
       "market": "A",
-      "price": 54.0,
-      "prevClose": 56.12,
-      "week52High": 61.73,
-      "week52Low": 50.51
+      "price": 54.29,
+      "prevClose": 54.0,
+      "week52High": 59.4,
+      "week52Low": 48.6
     },
     "688720": {
       "name": "艾森股份",
       "market": "A",
-      "price": 62.03,
-      "prevClose": 65.64,
-      "week52High": 78.77,
-      "week52Low": 52.51
+      "price": 62.4,
+      "prevClose": 62.03,
+      "week52High": 74.44,
+      "week52Low": 49.62
     },
     "603986": {
       "name": "兆易创新",
       "market": "A",
-      "price": 353.9,
-      "prevClose": 367.57,
-      "week52High": 404.33,
-      "week52Low": 330.81
+      "price": 348.78,
+      "prevClose": 353.9,
+      "week52High": 389.29,
+      "week52Low": 318.51
     },
     "688111": {
       "name": "金山办公",
       "market": "A",
-      "price": 218.8,
-      "prevClose": 216.9,
-      "week52High": 260.28,
-      "week52Low": 173.52
+      "price": 219.91,
+      "prevClose": 218.8,
+      "week52High": 262.56,
+      "week52Low": 175.04
     },
     "002230": {
       "name": "科大讯飞",
       "market": "A",
-      "price": 37.22,
-      "prevClose": 37.2,
-      "week52High": 40.92,
-      "week52Low": 33.48
+      "price": 37.42,
+      "prevClose": 37.22,
+      "week52High": 40.94,
+      "week52Low": 33.5
     },
     "002335": {
       "name": "科华数据",
       "market": "A",
-      "price": 29.93,
-      "prevClose": 30.75,
-      "week52High": 33.83,
-      "week52Low": 27.68
+      "price": 30.22,
+      "prevClose": 29.93,
+      "week52High": 32.92,
+      "week52Low": 26.94
     },
     "300693": {
       "name": "盛弘股份",
       "market": "A",
-      "price": 35.93,
-      "prevClose": 36.02,
-      "week52High": 43.22,
-      "week52Low": 28.82
+      "price": 36.31,
+      "prevClose": 35.93,
+      "week52High": 43.12,
+      "week52Low": 28.74
     },
     "300153": {
       "name": "科泰电源",
       "market": "A",
-      "price": 23.71,
-      "prevClose": 24.42,
-      "week52High": 29.3,
-      "week52Low": 19.54
+      "price": 23.88,
+      "prevClose": 23.71,
+      "week52High": 28.45,
+      "week52Low": 18.97
     },
     "VRT": {
       "name": "VRT",
       "market": "US",
-      "price": 253.14,
+      "price": 246.49,
       "week52High": 379.93,
       "week52Low": 147.82
     },
     "ETN": {
       "name": "ETN",
       "market": "US",
-      "price": 445.09,
+      "price": 431.33,
       "week52High": 478.0,
       "week52Low": 311.92
     },
     "GEV": {
       "name": "GEV",
       "market": "US",
-      "price": 1029.21,
+      "price": 997.09,
       "week52High": 1195.94,
       "week52Low": 530.16
     },
     "MU": {
       "name": "MU",
       "market": "US",
-      "price": 1045.56,
+      "price": 1088.0,
       "week52High": 1255.0,
       "week52Low": 179.61
     },
     "AVGO": {
       "name": "AVGO",
       "market": "US",
-      "price": 375.81,
+      "price": 376.51,
       "week52High": 495.0,
       "week52Low": 289.96
     },
     "MRVL": {
       "name": "MRVL",
       "market": "US",
-      "price": 287.01,
+      "price": 284.68,
       "week52High": 329.88,
       "week52Low": 70.69
     },
     "ALAB": {
       "name": "ALAB",
       "market": "US",
-      "price": 389.8,
+      "price": 382.25,
       "week52High": 499.48,
       "week52Low": 97.89
     },
     "ANET": {
       "name": "ANET",
       "market": "US",
-      "price": 215.36,
-      "week52High": 214.89,
+      "price": 215.83,
+      "week52High": 216.07,
       "week52Low": 114.52
     },
     "CRDO": {
       "name": "CRDO",
       "market": "US",
-      "price": 220.83,
+      "price": 220.01,
       "week52High": 308.67,
       "week52Low": 86.49
     },
     "MOD": {
       "name": "MOD",
       "market": "US",
-      "price": 189.91,
+      "price": 189.44,
       "week52High": 323.25,
       "week52Low": 111.18
     },
     "PLTR": {
       "name": "PLTR",
       "market": "US",
-      "price": 192.07,
+      "price": 194.12,
       "week52High": 207.52,
       "week52Low": 106.37
     },
     "NOW": {
       "name": "NOW",
       "market": "US",
-      "price": 137.97,
+      "price": 137.87,
       "week52High": 192.97,
       "week52Low": 81.24
     },
     "GTLB": {
       "name": "GTLB",
       "market": "US",
-      "price": 51.63,
+      "price": 51.99,
       "week52High": 55.55,
       "week52Low": 18.73
     },
     "CRM": {
       "name": "CRM",
       "market": "US",
-      "price": 224.99,
+      "price": 224.56,
       "week52High": 269.11,
       "week52Low": 146.32
     },
     "DDOG": {
       "name": "DDOG",
       "market": "US",
-      "price": 278.24,
+      "price": 271.34,
       "week52High": 292.72,
       "week52Low": 98.01
     },
     "SNOW": {
       "name": "SNOW",
       "market": "US",
-      "price": 335.95,
+      "price": 332.85,
       "week52High": 384.56,
       "week52Low": 118.3
     },
     "CRWD": {
       "name": "CRWD",
       "market": "US",
-      "price": 278.86,
-      "week52High": 274.23,
+      "price": 265.44,
+      "week52High": 286.99,
       "week52Low": 85.68
     },
     "MDB": {
       "name": "MDB",
       "market": "US",
-      "price": 360.71,
+      "price": 363.03,
       "week52High": 473.1,
       "week52Low": 215.68
     }
